@@ -12,9 +12,9 @@ class BlockSerializer(serializers.ModelSerializer):
         fields = ('start_time', 'end_time', 'rotation')
 
 class DaySerializer(serializers.ModelSerializer):
-    blocks = BlockSerializer(many=True, read_only=True)
-    events = EventSerializer(many=True, read_only=True)
+    day_blocks = BlockSerializer(many=True, read_only=True)
+    day_events = EventSerializer(many=True, read_only=True)
 
     class Meta:
         model = Day
-        fields = ('date', 'day_type', 'name', 'announcement', 'blocks', 'events', 'school_start_time', 'school_end_time')
+        fields = ('date', 'day_type', 'name', 'announcement', 'day_blocks', 'day_events', 'school_start_time', 'school_end_time')
