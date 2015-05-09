@@ -5,6 +5,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'days', views.DayViewSet, 'Day')
+router.register(r'events', views.EventViewSet, 'Event')
 
 urlpatterns = patterns('',
     # Examples:

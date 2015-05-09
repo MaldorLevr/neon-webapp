@@ -4,3 +4,4 @@ __pycache__/
 __migrations__/
 migrations/
 django_env/
+settings.py
