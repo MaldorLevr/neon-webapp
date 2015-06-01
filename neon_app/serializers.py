@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from neon_app.models import Day, Event, Block
+from neon_app.models import Day, Event, Block, Staff, About
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,6 +10,16 @@ class BlockSerializer(serializers.ModelSerializer):
     class Meta:
         model = Block
         fields = ('start_time', 'end_time', 'rotation')
+
+class StaffSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Staff
+        fields = ('name', 'type', 'title', 'email', 'website')
+
+class AboutSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = About
+        fields = ('about', 'staff')
 
 class DaySerializer(serializers.ModelSerializer):
     day_blocks = BlockSerializer(many=True, read_only=True)
