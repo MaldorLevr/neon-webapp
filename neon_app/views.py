@@ -21,7 +21,7 @@ class DayViewSet(viewsets.ModelViewSet):
 
 class StaffViewSet(viewsets.ModelViewSet):
     queryset = Staff.objects.all()
-    serializer_class = EventSerializer
+    serializer_class = StaffSerializer
 
 class AboutViewSet(viewsets.ModelViewSet):
     queryset = About.objects.all()
