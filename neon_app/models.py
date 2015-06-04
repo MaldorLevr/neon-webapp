@@ -13,6 +13,9 @@ class Staff(models.Model):
     email = models.CharField(max_length=100, blank=True, null=True)
     website = models.CharField(max_length=100, blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 class Event(models.Model):
     name = models.CharField(max_length=100)
     time = models.TimeField(blank=True, null=True)
