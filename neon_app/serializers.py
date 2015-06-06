@@ -19,7 +19,7 @@ class StaffSerializer(serializers.ModelSerializer):
 class AboutSerializer(serializers.ModelSerializer):
     class Meta:
         model = About
-        fields = ('about', 'email')
+        fields = ('about', 'support_email')
 
 class DaySerializer(serializers.ModelSerializer):
     day_blocks = BlockSerializer(many=True, read_only=True)
