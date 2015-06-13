@@ -7,7 +7,7 @@ router = routers.DefaultRouter()
 router.register(r'days', views.DayViewSet, 'Day')
 router.register(r'staff', views.StaffViewSet, 'Staff')
 router.register(r'about', views.AboutViewSet, 'About')
-router.register(r'discover', views.AboutViewSet, 'Discover')
+router.register(r'discover', views.DiscoverViewSet, 'Discover')
 
 urlpatterns = patterns('',
     # Examples:
