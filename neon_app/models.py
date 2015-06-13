@@ -30,6 +30,15 @@ class Block(models.Model):
     def __str__(self):
         return "{0} : {1}".format(self.start_time, self.rotation)
 
+class Discover(models.Model):
+    name = models.CharField(max_length=100)
+    #type should be: academic, athletic, art, other
+    type = models.CharField(max_length=100)
+    website = models.CharField(max_length=100, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
 class Day(models.Model):
     date = models.DateField()
     name = models.CharField(max_length=100)
