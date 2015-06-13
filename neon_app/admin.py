@@ -1,5 +1,5 @@
 from django.contrib import admin
-from neon_app.models import Day, Block, Event, About, Staff
+from neon_app.models import Day, Block, Event, About, Staff, Discover
 
 # Register your models here.
 
@@ -8,3 +8,4 @@ admin.site.register(Block)
 admin.site.register(Day)
 admin.site.register(About)
 admin.site.register(Staff)
+admin.site.register(Discover)
