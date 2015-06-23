@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from neon_app.models import Day, Event, Block, Staff, About, Discover, Vacation
+from neon_app.models import Day, Event, Block, Staff, About, Discover, Vacation, YearStart
+
+class YearStartSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = YearStart
+        fields = ('date')
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:

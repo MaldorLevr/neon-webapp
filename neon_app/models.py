@@ -32,6 +32,12 @@ class Block(models.Model):
     def __str__(self):
         return "{0} : {1}".format(self.start_time, self.rotation)
 
+class YearStart(models.Model):
+    date = models.DateField()
+
+    def __str__(self):
+        return self.date
+
 class Vacation(models.Model):
     name = models.CharField(max_length=100)
     start_date = models.DateField()

@@ -9,6 +9,7 @@ router.register(r'staff', views.StaffViewSet, 'Staff')
 router.register(r'about', views.AboutViewSet, 'About')
 router.register(r'discover', views.DiscoverViewSet, 'Discover')
 router.register(r'vacation', views.VacationViewSet, 'Vacation')
+router.register(r'yearstarts', views.YearStartViewSet, 'YearStart')
 
 urlpatterns = patterns('',
     # Examples:
