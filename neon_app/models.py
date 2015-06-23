@@ -36,7 +36,7 @@ class YearStart(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return self.date
+        return self.date.__str__()
 
 class Vacation(models.Model):
     name = models.CharField(max_length=100)
