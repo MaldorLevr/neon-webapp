@@ -4,7 +4,7 @@ from neon_app.models import Day, Event, Block, Staff, About, Discover, Vacation,
 class YearStartSerializer(serializers.ModelSerializer):
     class Meta:
         model = YearStart
-        fields = ('date')
+        fields = ('date',)
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
