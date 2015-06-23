@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from neon_app.models import Day, Event, About, Staff, Discover
-from neon_app.serializers import DaySerializer, EventSerializer, AboutSerializer, StaffSerializer, DiscoverSerializer
+from neon_app.models import Day, Event, About, Staff, Discover, Vacation
+from neon_app.serializers import DaySerializer, EventSerializer, AboutSerializer, StaffSerializer, DiscoverSerializer, VacationSerializer
 from datetime import date
 
 
@@ -18,6 +18,10 @@ class DayViewSet(viewsets.ModelViewSet):
         return queryset
 
     serializer_class = DaySerializer
+
+class VacationViewSet(viewsets.ModelViewSet):
+    queryset = Vacation.objects.all()
+    serializer_class = VacationSerializer
 
 class DiscoverViewSet(viewsets.ModelViewSet):
     queryset = Discover.objects.all()

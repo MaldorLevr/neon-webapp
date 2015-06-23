@@ -20,6 +20,7 @@ class Event(models.Model):
     name = models.CharField(max_length=100)
     time = models.TimeField(blank=True, null=True)
     info = models.TextField(blank=True, null=True)
+
     def __str__(self):
         return "{0} : {1}".format(self.name, self.time)
 
@@ -27,8 +28,17 @@ class Block(models.Model):
     start_time = models.TimeField(blank=True, null=True)
     end_time = models.TimeField(blank=True, null=True)
     rotation = models.SmallIntegerField(blank=True, null=True)
+
     def __str__(self):
         return "{0} : {1}".format(self.start_time, self.rotation)
+
+class Vacation(models.Model):
+    name = models.CharField(max_length=100)
+    start_date = models.DateField()
+    end_date = models.DateField()
+
+    def __str__(self):
+        return self.name
 
 class Discover(models.Model):
     name = models.CharField(max_length=100)
