@@ -2,6 +2,8 @@ from rest_framework import serializers
 from neon_app.models import Day, Event, Block, Staff, About, Discover, Vacation, YearStart
 
 class YearStartSerializer(serializers.ModelSerializer):
+    date = serializers.DateField(format="20%y-%m-%dT00:00-07:00")
+
     class Meta:
         model = YearStart
         fields = ('date',)
@@ -32,6 +34,9 @@ class AboutSerializer(serializers.ModelSerializer):
         fields = ('about', 'support_email')
 
 class VacationSerializer(serializers.ModelSerializer):
+    start_date = serializers.DateField(format="20%y-%m-%dT00:00-07:00")
+    end_date = serializers.DateField(format="20%y-%m-%dT00:00-07:00")
+
     class Meta:
         model = Vacation
         fields = ('name', 'start_date', 'end_date')
