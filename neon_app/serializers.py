@@ -39,6 +39,7 @@ class VacationSerializer(serializers.ModelSerializer):
 class DaySerializer(serializers.ModelSerializer):
     day_blocks = BlockSerializer(many=True, read_only=True)
     day_events = EventSerializer(many=True, read_only=True)
+    date = serializers.DateField(format="20%y-%m-%dT00:00-07:00")
 
     class Meta:
         model = Day
