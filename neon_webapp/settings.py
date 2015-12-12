@@ -33,13 +33,6 @@ ROOT_URLCONF = 'neon_webapp.urls'
 
 WSGI_APPLICATION = 'neon_webapp.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -84,7 +77,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-if os.environ.get('GUNICORN_PRODUCTION'):
+if os.environ.get('UPSTART_JOB'):
     # if in production
     # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = os.environ['SECRET_KEY']
@@ -94,7 +87,7 @@ if os.environ.get('GUNICORN_PRODUCTION'):
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'django',
             'USER': 'django',
-            'PASSWORD': '6azV3X6CJd',
+            'PASSWORD': 'Q6cH9prrJe',
             'HOST': '127.0.0.1',
             'PORT': '5432',
         }
@@ -128,13 +121,20 @@ if os.environ.get('GUNICORN_PRODUCTION'):
         },
     }
 else:
-    SECRET_KEY = 'v$n#racg8iqp4d*s+3k@cc^svw7qln@z6%ercj+iw$ub+@a#ma'\
+    SECRET_KEY = 'v$n#racg8iqp4d*s+3k@cc^svw7qln@z6%ercj+iw$ub+@a#ma'
     DEBUG = True
+
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     }
+    # }
 
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'postgres',
+            'NAME': 'neon_postgres',
             'USER': 'postgres',
             'HOST': '127.0.0.1',
             'PORT': '5432',
