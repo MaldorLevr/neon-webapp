@@ -3,7 +3,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 REGISTRATION_OPEN = False
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_HEADERS = (
+    'Cache-Control',
+    'Accept-Encoding',
+)
+
 INSTALLED_APPS = (
+    'corsheaders',
     'rest_framework',
     'neon_app',
     'django.contrib.admin',
@@ -15,6 +22,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,7 +95,7 @@ if os.environ.get('UPSTART_JOB'):
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'django',
             'USER': 'django',
-            'PASSWORD': 'Q6cH9prrJe',
+            'PASSWORD': 'kKzvQCcBBJ',
             'HOST': '127.0.0.1',
             'PORT': '5432',
         }
