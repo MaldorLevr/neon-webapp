@@ -117,7 +117,7 @@ if os.environ.get('SECRET_KEY'):
             'file': {
                 'level': 'DEBUG',
                 'class': 'logging.FileHandler',
-                'filename': '/home/django/betting-predictions/debug.log',
+                'filename': '/home/django/neon-webapp/debug.log',
             },
         },
         'loggers': {
