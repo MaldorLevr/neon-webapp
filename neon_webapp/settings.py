@@ -85,7 +85,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-if os.environ.get('UPSTART_JOB'):
+if os.environ.get('SECRET_KEY'):
     # if in production
     # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = os.environ['SECRET_KEY']
