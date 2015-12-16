@@ -3,9 +3,25 @@ from rest_framework import viewsets
 from neon_app.models import Day, Event, About, Staff, Discover, Vacation, YearStart
 from neon_app.serializers import DaySerializer, EventSerializer, AboutSerializer, StaffSerializer, DiscoverSerializer, VacationSerializer, YearStartSerializer
 from datetime import date
+import json
+
+
+def register_token(request):
+    body = json.loads(request.body)
+    if body["app_id"] == "xenon_id_placeholder":
+        android_tokens = body["_push"]["android_tokens"]
+        ios_tokens = body["_push"]["ios_tokens"]
+        if body["unregister"]:
+            # unregister stuff
+        else:
+            # resgister stuff
+    elif body["token_invalid"]:
+        # invalidate token
+    return test
 
 
 class DayViewSet(viewsets.ModelViewSet):
+
     def get_queryset(self):
         queryset = Day.objects.all()
         day = self.request.query_params.get('d', None)
@@ -19,25 +35,31 @@ class DayViewSet(viewsets.ModelViewSet):
 
     serializer_class = DaySerializer
 
+
 class YearStartViewSet(viewsets.ModelViewSet):
     queryset = YearStart.objects.all()
     serializer_class = YearStartSerializer
+
 
 class VacationViewSet(viewsets.ModelViewSet):
     queryset = Vacation.objects.all()
     serializer_class = VacationSerializer
 
+
 class DiscoverViewSet(viewsets.ModelViewSet):
     queryset = Discover.objects.all()
     serializer_class = DiscoverSerializer
+
 
 class StaffViewSet(viewsets.ModelViewSet):
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
 
+
 class AboutViewSet(viewsets.ModelViewSet):
     queryset = About.objects.all()
     serializer_class = AboutSerializer
+
 
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
