@@ -17,7 +17,8 @@ def register_token(request):
             # resgister stuff
     elif body["token_invalid"]:
         # invalidate token
-    return test
+    else:
+        # invalid request
 
 
 class DayViewSet(viewsets.ModelViewSet):
