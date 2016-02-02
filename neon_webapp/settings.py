@@ -107,7 +107,7 @@ if os.environ.get('SECRET_KEY'):
         '127.0.0.1',
         u'127.0.0.1',
         '107.170.252.240',
-        'windsorapp.me',
+        u'windsorapp.me',
         '.windsorapp.me',
         'windsorapp.me.',
     ]
