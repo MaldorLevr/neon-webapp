@@ -1,60 +1,7 @@
-from django.shortcuts import render
 from rest_framework import viewsets
-from neon_app.models import Day, Event, About, Staff, Discover, Vacation, YearStart, DeviceToken
+from neon_app.models import Day, Event, About, Staff, Discover, Vacation, YearStart
 from neon_app.serializers import DaySerializer, EventSerializer, AboutSerializer, StaffSerializer, DiscoverSerializer, VacationSerializer, YearStartSerializer
 from datetime import date
-from django.http import HttpResponse
-import json
-
-
-def register_token(request):
-    if request.method == 'POST':
-        body = json.loads(request.body)
-        if body["app_id"] == "xenon_id_placeholder":
-            android_tokens = body["_push"]["android_tokens"]
-            ios_tokens = body["_push"]["ios_tokens"]
-            if body["unregister"]:
-                # unregister stuff
-                for token in ios_tokens:
-                    db_token = DeviceToken.objects.get(token=token, os="ios")
-                    db_token.active = False
-                    db_token.save()
-                for token in android_tokens:
-                    db_token = DeviceToken.objects.get(token=token, os="android")
-                    db_token.active = False
-                    db_token.save()
-                response = HttpResponse("OK")
-                response.status_code = 200
-                return response
-            else:
-                # resgister stuff
-                for token in ios_tokens:
-                    db_token = DeviceToken(token=token, os="ios")
-                    db_token.save()
-                for token in android_tokens:
-                    db_token = DeviceToken(token=token, os="android")
-                    db_token.save()
-                response = HttpResponse("Created")
-                response.status_code = 201
-                return response
-        elif body["token_invalid"]:
-            # invalidate token
-            if body["ios_token"]:
-                token = body["ios_token"]
-                os = "ios"
-            elif body["android_token"]:
-                token = body["android_token"]
-                os = "android"
-            db_token = DeviceToken().objects.get(token=token, os=os)
-            db_token.active = False
-            response = HttpResponse("OK")
-            response.status_code = 200
-            return HttpResponse
-    else:
-        response = HttpResponse("Invalid method")
-        response.status_code = 405
-        return response
-
 
 class DayViewSet(viewsets.ModelViewSet):
 

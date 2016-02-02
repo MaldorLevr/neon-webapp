@@ -17,6 +17,5 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(router.urls, namespace='api')),
-    url(r'^register-device/', views.register_token)
+    url(r'^', include(router.urls, namespace='api'))
 ]
