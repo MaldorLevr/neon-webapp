@@ -99,7 +99,7 @@ if os.environ.get('SECRET_KEY'):
             'PORT': '5432',
         }
     }
-    DEBUG = True
+    DEBUG = False
 
     STATIC_ROOT = '/home/django/static/'
 
