@@ -1,9 +1,10 @@
 from django.db import models
 
-# Create your models here.
+
 class About(models.Model):
     about = models.TextField()
     support_email = models.CharField(max_length=100)
+
 
 class Staff(models.Model):
     name = models.CharField(max_length=100)
@@ -16,6 +17,7 @@ class Staff(models.Model):
     def __str__(self):
         return self.name
 
+
 class Event(models.Model):
     name = models.CharField(max_length=100)
     time = models.TimeField(blank=True, null=True)
@@ -23,6 +25,7 @@ class Event(models.Model):
 
     def __str__(self):
         return "{0} : {1}".format(self.name, self.time)
+
 
 class Block(models.Model):
     start_time = models.TimeField(blank=True, null=True)
@@ -32,11 +35,13 @@ class Block(models.Model):
     def __str__(self):
         return "{0} : {1}".format(self.start_time, self.rotation)
 
+
 class YearStart(models.Model):
     date = models.DateField()
 
     def __str__(self):
         return self.date.__str__()
+
 
 class Vacation(models.Model):
     name = models.CharField(max_length=100)
@@ -46,14 +51,16 @@ class Vacation(models.Model):
     def __str__(self):
         return self.name
 
+
 class Discover(models.Model):
     name = models.CharField(max_length=100)
-    #type should be: academic, athletic, art, other
+    # type should be: academic, athletic, art, other
     type = models.CharField(max_length=100)
     website = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.name
+
 
 class Day(models.Model):
     date = models.DateField()
@@ -63,11 +70,16 @@ class Day(models.Model):
     school_start_time = models.TimeField(blank=True, null=True)
     day_blocks = models.ManyToManyField('Block', blank=True)
     day_events = models.ManyToManyField('Event', blank=True)
-    # block_1 = models.ForeignKey('Block', related_name='block_1', blank=True, null=True)
-    # block_2 = models.ForeignKey('Block', related_name='block_2', blank=True, null=True)
-    # block_3 = models.ForeignKey('Block', related_name='block_3', blank=True, null=True)
-    # block_4 = models.ForeignKey('Block', related_name='block_4', blank=True, null=True)
     school_end_time = models.TimeField(blank=True, null=True)
 
     def __str__(self):
         return "{0} : {1}".format(self.date, self.name)
+
+
+class DeviceToken(models.Model):
+    token = models.CharField(max_length=100)
+    os = models.CharField(max_length=40)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return "{0}: {1}".format(self.token, self.os)
