@@ -13,6 +13,7 @@ INSTALLED_APPS = (
     'corsheaders',
     'rest_framework',
     'neon_app',
+    'huey.contrib.djhuey',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
