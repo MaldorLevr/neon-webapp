@@ -57,6 +57,13 @@ TEMPLATES = [
     },
 ]
 
+HUEY = {
+    'name': 'my-app',
+
+    # Options to pass into the consumer when running ``manage.py run_huey``
+    'consumer': {'workers': 4, 'worker_type': 'thread'},
+}
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -119,8 +126,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'neon_postgres',
-            'USER': 'postgres',
+            'NAME': 'postgres',
             'HOST': '127.0.0.1',
             'PORT': '5432',
         }
