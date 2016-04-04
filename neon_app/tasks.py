@@ -8,7 +8,7 @@ pro_d_terms = ['Professional', 'Pro-D', 'Development']
 holiday_terms = ['Holiday', 'Statutory', 'School Closed']
 late_start_terms = ['Late Start']
 
-@db_periodic_task(crontab(minute="*"))
+@db_periodic_task(crontab(minute="*/5"))
 def update_from_calendar():
     print("hello")
     r = requests.get('http://www.sd44.ca/school/windsor/_LAYOUTS/15/scholantis/handlers/ical/event.ashx?List=f13b021f-ee41-4705-ab17-1a2f36172f0b')
