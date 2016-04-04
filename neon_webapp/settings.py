@@ -111,7 +111,10 @@ if os.environ.get('SECRET_KEY'):
 
     STATIC_ROOT = '/home/django/static/'
 
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['127.0.0.1',
+                     u'127.0.0.1',
+                     '107.170.252.240',
+                     'windsorapp.me', ]
 else:
     SECRET_KEY = 'v$n#racg8iqp4d*s+3k@cc^svw7qln@z6%ercj+iw$ub+@a#ma'
     DEBUG = True
