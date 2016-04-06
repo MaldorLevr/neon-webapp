@@ -110,7 +110,7 @@ if os.environ.get('SECRET_KEY'):
             'PORT': '3306',
         }
     }
-    DEBUG = False
+    DEBUG = True
 
     ALLOWED_HOSTS = ['127.0.0.1',
                      u'127.0.0.1',
@@ -150,7 +150,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'postgres',
+            'NAME': 'django',
             'HOST': '127.0.0.1',
             'PORT': '5432',
         }
