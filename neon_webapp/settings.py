@@ -91,6 +91,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '~/django/static/'
+
 
 if os.environ.get('SECRET_KEY'):
     # if in production
@@ -109,8 +111,6 @@ if os.environ.get('SECRET_KEY'):
         }
     }
     DEBUG = False
-
-    STATIC_ROOT = '/home/django/static/'
 
     ALLOWED_HOSTS = ['127.0.0.1',
                      u'127.0.0.1',
