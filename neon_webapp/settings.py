@@ -100,12 +100,12 @@ if os.environ.get('SECRET_KEY'):
 
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.mysql',
             'NAME': 'django',
             'USER': 'django',
             'PASSWORD': PASSWORD,
             'HOST': '127.0.0.1',
-            'PORT': '5432',
+            'PORT': '3306',
         }
     }
     DEBUG = False
@@ -129,7 +129,7 @@ else:
 
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.mysql',
             'NAME': 'postgres',
             'HOST': '127.0.0.1',
             'PORT': '5432',
