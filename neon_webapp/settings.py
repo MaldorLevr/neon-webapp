@@ -91,7 +91,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '~/django/static/'
+STATIC_ROOT = '../static/'
 
 
 if os.environ.get('SECRET_KEY'):
