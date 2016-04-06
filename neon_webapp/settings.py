@@ -88,13 +88,14 @@ if os.environ.get('SECRET_KEY'):
     # if in production
     # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = os.environ['SECRET_KEY']
+    PASSWORD = os.environ['DB_PASSWORD']
 
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.mysql',
             'NAME': 'django',
             'USER': 'django',
-            'PASSWORD': 'kKzvQCcBBJ',
+            'PASSWORD': PASSWORD,
             'HOST': '127.0.0.1',
             'PORT': '5432',
         }
