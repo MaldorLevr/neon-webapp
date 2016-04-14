@@ -27,8 +27,10 @@ def update_from_calendar():
             day_type = "late-start"
         elif any(x in event['summary'] for x in pro_d_terms):
             day_type = "pro-d"
+        else:
+            day_type = "normal"
 
-        if 'summary' in event:
+        if 'summary ' in event:
             name = event['summary']
         else:
             name = "Normal Day"
