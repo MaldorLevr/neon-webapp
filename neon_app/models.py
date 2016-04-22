@@ -81,4 +81,4 @@ class DeviceToken(models.Model):
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return "{0}: {1}".format(self.token, self.os)
+        return "{0}".format(self.token)
