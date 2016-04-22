@@ -77,8 +77,7 @@ class Day(models.Model):
 
 
 class DeviceToken(models.Model):
-    token = models.CharField(max_length=100)
-    os = models.CharField(max_length=40)
+    token = models.CharField(max_length=200)
     active = models.BooleanField(default=True)
 
     def __str__(self):
