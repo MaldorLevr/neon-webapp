@@ -74,3 +74,12 @@ class Day(models.Model):
 
     def __str__(self):
         return "{0} : {1}".format(self.date, self.name)
+
+
+class DeviceToken(models.Model):
+    token = models.CharField(max_length=100)
+    os = models.CharField(max_length=40)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return "{0}: {1}".format(self.token, self.os)
