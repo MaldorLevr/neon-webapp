@@ -19,4 +19,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include(router.urls, namespace='api')),
     url(r'^register-device/', views.register_token),
+    url(r'^send-notification/', views.send_notification),
 ]

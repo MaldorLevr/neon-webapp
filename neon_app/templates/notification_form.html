@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Notification Send Form</title>
+</head>
+
+<body>
+    <form class="enter" method="post">
+        {% csrf_token %}
+        <input type="text" name="title" value="Title">
+        <input type="text" name="message" value="Message">
+        <input type="submit" value="Send Push Notification">
+    </form>
+</body>
+</html>
