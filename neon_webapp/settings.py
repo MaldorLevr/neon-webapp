@@ -93,7 +93,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = '../static/'
 
-IONIC_API_KEY = os.environ.get('IONIC_API_KEY')
+IONIC_API_KEY = os.environ['IONIC_API_KEY']
 
 if os.environ.get('SECRET_KEY'):
     # if in production
