@@ -52,7 +52,7 @@ def send_notification(request):
         contents = \
             {
                 'tokens': token_array,
-                'profile': "gcm_stuff",
+                'profile': "build",
                 'notification':
                 {
                     'title': title,
