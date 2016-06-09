@@ -14,14 +14,25 @@ from django.contrib.auth.decorators import user_passes_test
 @csrf_exempt
 def register_token(request):
     if request.method == 'POST':
-        tokens = DeviceToken.objects.filter(token=request.body)
+        try:
+            data = json.loads(request.body)
+            grad_status = data['grad_status']
+            token = data['token']
+        except ValueError as e:
+            token = request.body
+            grad_status = False
+
+        tokens = DeviceToken.objects.filter(token=token)
         print(request.body)
         if len(tokens) < 1:
-            db_token = DeviceToken(token=request.body)
+            db_token = DeviceToken(token=token, grad_status=grad_status)
             db_token.save()
             response = HttpResponse("OK")
             response.status_code = 200
             return response
+        elif len(tokens) == 1:
+            tokens[0].grad_status = grad_status
+            tokens[0].save()
         else:
             response = HttpResponse("Device Token already exists")
             response.status_code = 400
