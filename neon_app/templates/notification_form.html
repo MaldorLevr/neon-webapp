@@ -7,10 +7,10 @@
 <body>
     <form class="enter" method="post">
         {% csrf_token %}
-        <input type="text" name="title" value="Title">
+        <input type="text" name="title" value="WS Companion">
         <input type="text" name="message" value="Message">
         <label for="gradStatus">Grad Only:</label>
-        <input type="checkbox" id="gradStatus" name="gradStatus" value="false">
+        <input type="checkbox" name="gradStatus" id="gradStatus" value="false">
         <input type="submit" value="Send Push Notification">
     </form>
 </body>
