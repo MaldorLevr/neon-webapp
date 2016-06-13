@@ -16,7 +16,7 @@ def register_token(request):
     if request.method == 'POST':
         try:
             data = json.loads(str(request.body, 'utf-8'))
-            grad_status = data['grad_status']
+            grad_status = data['gradStatus']
             token = data['token']
         except ValueError as e:
             token = request.body
