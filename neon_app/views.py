@@ -49,7 +49,11 @@ def register_token(request):
 @user_passes_test(lambda u: u.is_superuser)
 def send_notification(request):
     if request.method == 'POST':
-        tokens = DeviceToken.objects.filter(active=True)
+        if request.POST['gradStatus']:
+            tokens = DeviceToken.objects.filter(active=True).filter(grad_status=True)
+        else:
+            tokens = DeviceToken.objects.filter(active=True)
+
         token_array = []
 
         for token in tokens:
