@@ -33,6 +33,9 @@ def register_token(request):
         elif len(tokens) == 1:
             tokens[0].grad_status = grad_status
             tokens[0].save()
+            response = HttpResponse("OK")
+            response.status_code = 200
+            return response
         else:
             response = HttpResponse("Device Token already exists")
             response.status_code = 400
