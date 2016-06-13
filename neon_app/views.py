@@ -15,7 +15,7 @@ from django.contrib.auth.decorators import user_passes_test
 def register_token(request):
     if request.method == 'POST':
         try:
-            data = json.loads(request.body)
+            data = str(json.loads(request.body), 'utf-8')
             grad_status = data['grad_status']
             token = data['token']
         except ValueError as e:
