@@ -1,6 +1,7 @@
 from huey.contrib.djhuey import crontab, db_periodic_task
 from neon_app.models import Day
 from icalendar import Calendar
+from django.db.models import Q
 import requests
 
 pro_d_terms = ['Professional', 'Pro-D', 'Development']
@@ -16,7 +17,7 @@ def update_from_calendar():
                      "event.ashx?List=f13b021f-ee41-4705-ab17-1a2f36172f0b")
     cal = Calendar.from_ical(r.text)
     for event in (x for x in cal.subcomponents if x.name == 'VEVENT'):
-        days = Day.objects.filter(name=event['summary']) \
+        days = Day.objects.filter(Q(name=event['summary']) | Q(name='Normal Day')) \
             .filter(date=event['dtstart'].dt)
         if len(days) > 0:
             continue
