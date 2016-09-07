@@ -1,7 +1,6 @@
 from huey.contrib.djhuey import crontab, db_periodic_task
 from neon_app.models import Day
 from icalendar import Calendar
-from django.db.models import Q
 import requests
 
 pro_d_terms = ['Professional', 'Pro-D', 'Development']
@@ -27,7 +26,7 @@ def update_from_calendar():
         else:
             day_type = "normal"
 
-        if 'summary ' in event:
+        if 'summary' in event:
             name = event['summary']
         else:
             name = "Normal Day"
