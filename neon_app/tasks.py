@@ -17,10 +17,6 @@ def update_from_calendar():
                      "event.ashx?List=f13b021f-ee41-4705-ab17-1a2f36172f0b")
     cal = Calendar.from_ical(r.text)
     for event in (x for x in cal.subcomponents if x.name == 'VEVENT'):
-        days = Day.objects.filter(Q(name=event['summary']) | Q(name='Normal Day')) \
-            .filter(date=event['dtstart'].dt)
-        if len(days) > 0:
-            continue
         day_type = ""
         if any(x in event['summary'] for x in holiday_terms):
             day_type = "holiday"
