@@ -75,6 +75,9 @@ class Day(models.Model):
     def __str__(self):
         return "{0} : {1}".format(self.date, self.name)
 
+    class Meta:
+        unique_together = ('date', 'name')
+
 
 class DeviceToken(models.Model):
     token = models.CharField(max_length=200)

@@ -41,9 +41,12 @@ def update_from_calendar():
         else:
             announcement = ""
 
-        day = Day(date=event['dtstart'].dt,
-                  name=name,
-                  day_type=day_type,
-                  announcement=announcement)
+        try:
+            day = Day(date=event['dtstart'].dt,
+                      name=name,
+                      day_type=day_type,
+                      announcement=announcement)
 
-        day.save()
+            day.save()
+        except ValidationError as e:
+            pass
