@@ -64,7 +64,7 @@ class Discover(models.Model):
 
 class Day(models.Model):
     date = models.DateField()
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=255)
     announcement = models.TextField(blank=True, null=True)
     day_type = models.CharField(max_length=20, default="normal")
     school_start_time = models.TimeField(blank=True, null=True)

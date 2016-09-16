@@ -1,6 +1,7 @@
 from huey.contrib.djhuey import crontab, db_periodic_task
 from neon_app.models import Day
 from icalendar import Calendar
+from django.db import IntegrityError
 import requests
 
 pro_d_terms = ['Professional', 'Pro-D', 'Development']
@@ -10,7 +11,6 @@ late_start_terms = ['Late Start']
 
 @db_periodic_task(crontab(minute="*/5"))
 def update_from_calendar():
-    print("hello")
     r = requests.get("http://www.sd44.ca/school/windsor/"
                      "_LAYOUTS/15/scholantis/handlers/ical/"
                      "event.ashx?List=f13b021f-ee41-4705-ab17-1a2f36172f0b")
@@ -43,5 +43,5 @@ def update_from_calendar():
                       announcement=announcement)
 
             day.save()
-        except ValidationError as e:
+        except IntegrityError as e:
             pass
