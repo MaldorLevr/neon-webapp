@@ -137,7 +137,9 @@ if os.environ.get('SECRET_KEY'):
         },
     }
 
-else:
+elif os.environ.get('DEV_DB_PASSWORD'):
+    DEV_DB_PASSWORD = os.environ['DEV_DB_PASSWORD']
+
     SECRET_KEY = 'v$n#racg8iqp4d*s+3k@cc^svw7qln@z6%ercj+iw$ub+@a#ma'
     DEBUG = True
 
@@ -151,8 +153,8 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'USER': 'root',
-            'PASSWORD': 'jparc',
+            'USER': 'django',
+            'PASSWORD': DEV_DB_PASSWORD,
             'NAME': 'django',
             'HOST': '127.0.0.1',
             'PORT': '3306',
