@@ -1,4 +1,4 @@
-# Xenon (formerly Neon) Web app for the WS Companion App
+# Xenon (formerly Neon) Web for WS Companion
 
 ## Features:
 * Creates an API for use by the [WS Companion app](https://github.com/MaldorLevr/xenon) which it uses to give updated information for students of Windsor Secondary
@@ -7,9 +7,12 @@
 * Stores teacher contact information for easy access with the [WS Companion app](https://github.com/MaldorLevr/xenon)
 
 ## Technologies used
-* Python
-* Django (and accompanying libraries)
-* Huey
-* Web APIs
-* MySQL (MariaDB)
+* [Python 3.x](https://www.python.org/)
+* [Django](https://www.djangoproject.com/) (and accompanying libraries)
+* [Huey](https://huey.readthedocs.io/en/latest/) paired with [Redis](http://redis.io/)
+* Web APIs ([Ionic](http://ionic.io/))
+* MySQL ([MariaDB](https://mariadb.org/))
 * HTML
+* [Ubuntu Server](http://www.ubuntu.com/download/server)
+* [Bash](https://www.gnu.org/software/bash/) shell
+* Ubuntu tools ([Supervisor](http://supervisord.org/), [Gunicorn](http://gunicorn.org/)), and more)
