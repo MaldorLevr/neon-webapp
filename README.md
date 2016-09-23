@@ -6,10 +6,13 @@
 * Uses [Ionic's Push API](https://docs.ionic.io/services/push/) to send notifications to Windsor Secondary students about important events
 * Stores teacher contact information for easy access with the [WS Companion app](https://github.com/MaldorLevr/xenon)
 
+--------------------------------------------------------------------------------
+
 ## Technologies used
 * [Python 3.x](https://www.python.org/)
 * [Django](https://www.djangoproject.com/) ([and accompanying libraries](https://github.com/MaldorLevr/neon-webapp/blob/master/requirements.txt))
 * [Git](https://git-scm.com/)
+* [Nginx](https://www.nginx.com/resources/wiki/)
 * Web APIs ([Ionic](http://ionic.io/))
 * MySQL ([MariaDB](https://mariadb.org/))
 * HTML
