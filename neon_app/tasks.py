@@ -43,5 +43,6 @@ def update_from_calendar():
                       announcement=announcement)
 
             day.save()
-        except IntegrityError as e:
+        except IntegrityError as ex:
+            # Log ex here once logging is configured
             pass
