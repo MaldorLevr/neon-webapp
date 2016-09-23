@@ -8,7 +8,7 @@
 
 ## Technologies used
 * [Python 3.x](https://www.python.org/)
-* [Django](https://www.djangoproject.com/) (and accompanying libraries)
+* [Django](https://www.djangoproject.com/) ([and accompanying libraries](https://github.com/MaldorLevr/neon-webapp/blob/master/requirements.txt))
 * [Huey](https://huey.readthedocs.io/en/latest/) paired with [Redis](http://redis.io/)
 * Web APIs ([Ionic](http://ionic.io/))
 * MySQL ([MariaDB](https://mariadb.org/))
