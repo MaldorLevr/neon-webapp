@@ -9,10 +9,11 @@
 ## Technologies used
 * [Python 3.x](https://www.python.org/)
 * [Django](https://www.djangoproject.com/) ([and accompanying libraries](https://github.com/MaldorLevr/neon-webapp/blob/master/requirements.txt))
-* [Huey](https://huey.readthedocs.io/en/latest/) paired with [Redis](http://redis.io/)
+* [Git](https://git-scm.com/)
 * Web APIs ([Ionic](http://ionic.io/))
 * MySQL ([MariaDB](https://mariadb.org/))
 * HTML
 * [Ubuntu Server](http://www.ubuntu.com/download/server)
-* [Bash](https://www.gnu.org/software/bash/) shell
+* [Bash](https://www.gnu.org/software/bash/) shell and bash tools
 * Ubuntu tools ([Supervisor](http://supervisord.org/), [Gunicorn](http://gunicorn.org/)), and more)
+* [Huey](https://huey.readthedocs.io/en/latest/) paired with [Redis](http://redis.io/)
