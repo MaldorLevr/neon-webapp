@@ -1,16 +1,23 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Notification Send Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static "send_notification.css" %}">
 </head>
 
 <body>
     <form class="enter" method="post">
         {% csrf_token %}
-        <input type="text" name="title" value="WS Companion">
-        <input type="text" name="message" value="Message">
-        <label for="gradStatus">Grad Only:</label>
-        <input type="checkbox" name="gradStatus" id="gradStatus" unchecked="unchecked">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="WS Companion">
+        <label for="message">Message:</label>
+        <textarea name="message" value="Message" id="message" rows="3" cols="18"></textarea>
+        <div class="gradOnly">
+            <label for="gradStatus">Grad Only:</label>
+            <input type="checkbox" name="gradStatus" id="gradStatus" unchecked="unchecked">
+        </div>
         <input type="submit" value="Send Push Notification">
     </form>
 </body>

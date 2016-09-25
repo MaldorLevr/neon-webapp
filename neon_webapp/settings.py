@@ -95,6 +95,8 @@ STATIC_ROOT = '../static/'
 
 IONIC_API_KEY = os.environ.get('IONIC_API_KEY')
 
+LOGIN_URL = "/admin/login/"
+
 if os.environ.get('SECRET_KEY'):
     # if in production
     # SECURITY WARNING: keep the secret key used in production secret!

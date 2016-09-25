@@ -1,0 +1,34 @@
+input {
+    width: 20em;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+input[type='checkbox'] {
+    display: inline-block;
+    margin: 0;
+    width: auto;
+}
+
+label[for='gradStatus'] {
+    display: inline-block;
+    margin: 0;
+}
+
+label {
+    display: block;
+}
+
+textarea {
+    margin-bottom: 20px;
+    resize: none;
+}
+
+form {
+    width: 20em;
+}
+
+.gradOnly {
+    margin-bottom: 20px;
+}
