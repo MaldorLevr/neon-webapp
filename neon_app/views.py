@@ -23,7 +23,6 @@ def register_token(request):
             grad_status = False
 
         tokens = DeviceToken.objects.filter(token=token)
-        print(request.body)
         if len(tokens) < 1:
             db_token = DeviceToken(token=token, grad_status=grad_status)
             db_token.save()
