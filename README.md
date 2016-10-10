@@ -1,4 +1,4 @@
-# Xenon (formerly Neon) Web for WS Companion
+# Xenon (formerly Neon) Web API for WS Companion
 
 ## Features:
 * Creates an API for use by the [WS Companion app](https://github.com/MaldorLevr/xenon) which it uses to give updated information for students of Windsor Secondary
