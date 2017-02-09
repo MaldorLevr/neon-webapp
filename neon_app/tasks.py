@@ -8,6 +8,7 @@ import requests
 pro_d_terms = ['Professional', 'Pro-D', 'Development']
 holiday_terms = ['Holiday', 'Statutory', 'School Closed']
 late_start_terms = ['Late Start']
+early_dismissal_terms = ['Early Dismissal']
 
 
 @db_periodic_task(crontab(minute="*/5"))
@@ -24,6 +25,8 @@ def update_from_calendar():
             day_type = "late-start"
         elif any(x in event['summary'] for x in pro_d_terms):
             day_type = "pro-d"
+        elif any(x in event['summary'] for x in early_dismissal_terms):
+            day_type = "early-d"
         else:
             day_type = "normal"
 

@@ -162,3 +162,18 @@ elif os.environ.get('DEV_DB_PASSWORD'):
             'PORT': '3306',
         }
     }
+else:
+    SECRET_KEY = 'v$n#racg8iqp4d*s+3k@cc^svw7qln@z6%ercj+iw$ub+@a#ma'
+    DEBUG = True
+    ALLOWED_HOSTS = ['*']
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+    HUEY = {
+        'always_eager': False
+    }
