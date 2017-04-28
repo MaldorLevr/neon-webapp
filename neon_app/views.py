@@ -58,6 +58,9 @@ def send_notification(request):
         for token in tokens:
             token_array.append(token.token)
 
+        if request.POST['token'] != "":
+            token_array = [request.POST['token']]
+
         title = request.POST['title']
         message = request.POST['message']
 

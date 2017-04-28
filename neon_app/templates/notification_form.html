@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Notification Send Form</title>
-    <link rel="stylesheet" type="text/css" href="{% static "send_notification.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static " send_notification.css " %}">
 </head>
 
 <body>
@@ -12,6 +13,8 @@
         {% csrf_token %}
         <label for="title">Title</label>
         <input type="text" name="title" id="title" value="WS Companion">
+        <label for="token">Device Token</label>
+        <input type="text" name="token" id="token" value="">
         <label for="message">Message:</label>
         <textarea name="message" value="Message" id="message" rows="3" cols="18"></textarea>
         <div class="gradOnly">
@@ -21,4 +24,5 @@
         <input type="submit" value="Send Push Notification">
     </form>
 </body>
+
 </html>
